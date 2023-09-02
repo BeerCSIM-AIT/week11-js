@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="myname" onmouseup="showText(this)"></p>
+  <div class="red" onmouseover="showText(this)">Text1</div>
+  <div class="red">Text2</div>
+
+  <button onclick="changeText()">Click me</button>
+  <button onclick="returnChange()">Return</button>
+  <script>
+
+    function showText(element) {
+      alert(element.style.color);
+      //อยากรู้ว่าใน element มีสีอะไร?
+    }
+    //ใส่ชื่อตัวเองใน myname
+    // เปลี่ยนสีข้อความเป็น red
+    function changeText() {
+      //event driven
+      document.getElementById("myname").innerHTML = "Phakpoom Ittirattanakomon"
+      let div = document.querySelectorAll(".red");
+      div.forEach((dv, i) => {
+        dv.style.color = "red";
+      })
+    }
+
+    function returnChange() {
+      //event driven
+      document.getElementById("myname").innerHTML = ""
+      let div = document.querySelectorAll(".red");
+      div.forEach((dv, i) => {
+        dv.style.color = "black";
+      })
+    }
+  </script>
+</body>
+
+</html>
